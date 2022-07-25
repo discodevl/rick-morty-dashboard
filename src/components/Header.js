@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import styles from './Header.module.css';
 
 function NavBar({filterhandler}) {
   const [characterName, setCharacterName] = useState();
@@ -9,8 +10,9 @@ function NavBar({filterhandler}) {
   }
 
   return (
-    <div>
-      <input type="text" onChange={characterHandler} />
+    <div className={styles.header}>
+      <div> logo </div>
+      <div>search: <input type="text" onChange={characterHandler} /></div>
     </div>
   )
 }

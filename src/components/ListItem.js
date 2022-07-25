@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './ListItem.module.css';
 
-function ListItem({children}) {
+function ListItem({children, onClick}) {
   return (
-    <div className={styles.itemContainer}>{children}</div>
+    <div className={styles.itemContainer} onClick={onClick}>{children}</div>
   )
 }
 
