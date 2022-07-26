@@ -4,14 +4,14 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background-color: white;
-  width: 80%;
+  width: 60%;
   height: 80%;
   z-index: 999;
   position: fixed;
   top: 10%;
-  left: calc(50% - 40%);
+  left: 20%;
   display: block !important;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .body {

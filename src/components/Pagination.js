@@ -23,7 +23,7 @@ function Pagination({ pagehandler }) {
         nextLabel="next &rarr;"
         previousLabel="&larr; previous"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
+        pageRangeDisplayed={1}
         pageCount={pageCount}
         containerClassName={styles.pagination}
         pageLinkClassName={styles['page-num']}

@@ -103,7 +103,7 @@ function App() {
                 onSelect={() => onSelectCharacter(char)}
                 onClick={() => onAddCharacter(char)}
               >
-                <p>#{char.id}</p> <p>{char.name}</p> <p>{convertString(char.gender)}</p>
+                <p>#{char.id}</p> <p style={{fontWeight: 'bold'}}>{char.name}</p> <p>{convertString(char.gender)}</p>
               </ListItem>
             );
           })

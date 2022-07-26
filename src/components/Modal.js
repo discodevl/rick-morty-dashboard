@@ -4,26 +4,29 @@ import ReactDom from "react-dom";
 import styles from "./Modal.module.css";
 
 function Modal({ character }) {
+  const episodesIds = new Set();
   const [episodes, setEpisodes] = useState([]);
 
   useEffect(() => {
-    function fetchEps() {
-      character.episode.map(async (url) => {
-        const ep = await fetchEpisode(url);
+    character.episode.map(async (url) => {
+      const ep = await fetchEpisode(url);
+      if (!episodesIds.has(ep.id)) {
+        episodesIds.add(ep.id);
         setEpisodes((eps) => [...eps, ep]);
-      });
-    }
-    fetchEps();
+      }
+    });
   }, []);
-
-  console.log({ episodes });
 
   return ReactDom.createPortal(
     <div className={styles.modal}>
       <h2 style={{ textAlign: "center" }}>{character.name}</h2>
       <div className={styles.body}>
         <div className={styles.imgContainer}>
-          <img className={styles.img} src={character.image} />
+          <img
+            className={styles.img}
+            alt="character"
+            src={character.image}
+          />
         </div>
         <div className={styles.contentWrapper}>
           <div className={styles.contentLine}>

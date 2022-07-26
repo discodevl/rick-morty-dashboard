@@ -1,18 +1,16 @@
-import { useState } from "react";
 import styles from "./Header.module.css";
 
 function NavBar({ filterhandler }) {
-  const [characterName, setCharacterName] = useState();
 
   function characterHandler(e) {
-    setCharacterName(e.target.value);
-    filterhandler(characterName);
+    filterhandler(e.target.value);
   }
 
   return (
     <div className={styles.header}>
       <img
         className={styles.img}
+        alt="logo-rickandmorty"
         src={require("../assets/rick&morty-logo.png")}
       />
       <div className={styles.search}>
