@@ -17,7 +17,7 @@ function Pagination({ pagehandler }) {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <ReactPaginate
         breakLabel="..."
         nextLabel="next &rarr;"

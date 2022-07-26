@@ -24,9 +24,9 @@
   cursor: pointer;
 }
 
-.svgAdd:hover{
-    fill: yellow;
+.svgAdd:hover {
+  fill: yellow;
 }
-.svgRemove:hover{
-    fill: gray
+.svgRemove:hover {
+  fill: gray;
 }

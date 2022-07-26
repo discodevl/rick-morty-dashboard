@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Pagination from "./components/Pagination";
-import { fetchData } from "./util/fetchData";
+import { fetchCharacters } from "./util/fetchData";
 import Header from "./components/Header";
 import CardList from "./components/CardList";
 import ListItem from "./components/ListItem";
@@ -20,9 +20,8 @@ function App() {
 
   useEffect(() => {
     async function getData() {
-      const res = await fetchData(page, characterName);
+      const res = await fetchCharacters(page, characterName);
       const characters = res.results;
-      console.log(characters);
       if (characters) {
         setError(false);
         setCharacterList(characters);
@@ -35,6 +34,8 @@ function App() {
   }, [page, characterName]);
 
   function retrieveCharacterName(name) {
+    setPage(null);
+    console.log(name);
     setCharacterName(name);
   }
 
@@ -56,6 +57,16 @@ function App() {
     setSelectedCharacter(character);
   }
 
+  function convertString(gender) {
+    if(gender === "Female") {
+      return 'F';
+    } else if(gender === "Male") {
+      return 'M';
+    } else {
+      return '-';
+    }
+  }
+
   return (
     <div className="appContainer">
       {selectedCharacter && <Modal character={selectedCharacter} />}
@@ -72,12 +83,12 @@ function App() {
                 onSelect={() => onSelectCharacter(char)}
                 onClick={() => onRemoveCharacter(char)}
               >
-                <p>#{char.id}</p> <p>{char.name}</p> <p>{char.gender}</p>
+                <p>#{char.id}</p> <p>{char.name}</p> <p>{convertString(char.gender)}</p>
               </ListItem>
             );
           })
         ) : (
-          <p>Favourite characters not added</p>
+          <p>Add your fav characters</p>
         )}
       </CardList>
       <CardList title="Characters" main>
@@ -92,7 +103,7 @@ function App() {
                 onSelect={() => onSelectCharacter(char)}
                 onClick={() => onAddCharacter(char)}
               >
-                <p>#{char.id}</p> <p>{char.name}</p> <p>{char.gender}</p>
+                <p>#{char.id}</p> <p>{char.name}</p> <p>{convertString(char.gender)}</p>
               </ListItem>
             );
           })
