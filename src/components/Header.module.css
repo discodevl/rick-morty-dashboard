@@ -6,3 +6,14 @@
   height: 5vh;
   color: #fff;
 }
+
+.img{
+  height: 50px;
+  width: '20%';
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}

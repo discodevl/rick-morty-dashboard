@@ -13,10 +13,4 @@
   overflow-y: auto;
 }
 
-.modal-dialog {
-  overflow-y: initial !important;
-}
 
-.modal-body {
-  padding: 0px;
-}

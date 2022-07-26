@@ -1,13 +1,13 @@
-import React from 'react';
-import styles from './CardList.module.css';
+import React from "react";
+import styles from "./CardList.module.css";
 
-function CardList({children, title}) {
+function CardList({ children, title, main }) {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${main && styles.main}`}>
       <h2 className={styles.title}>{title}</h2>
-        {children}
+      {children}
     </div>
-  )
+  );
 }
 
-export default CardList
+export default CardList;

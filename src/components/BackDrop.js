@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Backdrop.module.css';
+import styles from './BackDrop.module.css';
 
-function Backdrop(props) {
+function Backdrop({onCancel}) {
   return (
-    <div className={styles.backdrop} onClick={props.onCancel}></div>
+    <div className={styles.backdrop} onClick={onCancel}></div>
   )
 }
 
