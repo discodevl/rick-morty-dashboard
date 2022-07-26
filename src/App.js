@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import CardList from "./components/CardList";
 import ListItem from "./components/ListItem";
 
-const set = new Set();
+const charactersSet = new Set();
 
 function App() {
   const [characterList, setCharacterList] = useState([]);
@@ -15,15 +15,6 @@ function App() {
   const [characterName, setCharacterName] = useState();
   const [selectedCharacter, setSelectedCharacter] = useState();
   const [error, setError] = useState(false);
-
-  useEffect(() => {
-    async function getData() {
-      const res = await fetchData();
-      const characters = res.results;
-      setCharacterList(characters);
-    }
-    getData();
-  }, []);
 
   useEffect(() => {
     async function getData() {
@@ -50,8 +41,8 @@ function App() {
 
   function onSelectCharacter(character) {
     setSelectedCharacter(character);
-    set.add(character);
-    setFavCharacters([...set]);
+    charactersSet.add(character);
+    setFavCharacters([...charactersSet]);
   }
 
   return (
@@ -77,7 +68,7 @@ function App() {
           characterList.map((char, i) => {
             return (
               <ListItem key={i} onClick={() => onSelectCharacter(char)}>
-                {char.name}
+                {char.id} {char.name}
               </ListItem>
             );
           })

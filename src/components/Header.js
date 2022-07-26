@@ -1,7 +1,7 @@
-import {useState} from 'react';
-import styles from './Header.module.css';
+import { useState } from "react";
+import styles from "./Header.module.css";
 
-function NavBar({filterhandler}) {
+function NavBar({ filterhandler }) {
   const [characterName, setCharacterName] = useState();
 
   function characterHandler(e) {
@@ -12,9 +12,11 @@ function NavBar({filterhandler}) {
   return (
     <div className={styles.header}>
       <div> logo </div>
-      <div>search: <input type="text" onChange={characterHandler} /></div>
+      <div>
+        search: <input type="text" onChange={characterHandler} />
+      </div>
     </div>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
