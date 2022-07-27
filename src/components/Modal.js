@@ -59,7 +59,7 @@ function Modal({ character }) {
         {episodes.map((ep, i) => {
           return (
             <div key={i} className={styles.item}>
-              <p>{ep.episode}</p> <p>{ep.name}</p> <p>{ep.air_date}</p>
+              <p>{ep.episode}</p> <p>{ep.name}</p> <p className={styles.airDate}>{ep.air_date}</p>
             </div>
           );
         })}

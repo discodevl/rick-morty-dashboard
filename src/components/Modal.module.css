@@ -76,8 +76,8 @@
     overflow-y: auto;
   }
   .item{
-    height: 18px;
-    font-size: 8px;
+    /* height: 18px; */
+    font-size: 12px;
   }
   .contentWrapper{
     margin-left: 8px;
@@ -85,5 +85,8 @@
   .contentLine{
     font-size: 15px;
     height: 40px;
+  }
+  .airDate{
+    display: none;
   }
 }
