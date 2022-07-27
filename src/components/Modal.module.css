@@ -56,3 +56,34 @@
   height: 40px;
   border-width: 100%;
 }
+
+
+@media screen and (max-width: 700px) {
+  .body {
+    flex-direction: column;
+    overflow-y: auto;
+    margin: 0;
+  }
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .img {
+    width: 90%;
+    margin: 5px;
+  }
+  .modal{
+    overflow-y: auto;
+  }
+  .item{
+    height: 18px;
+    font-size: 8px;
+  }
+  .contentWrapper{
+    margin-left: 8px;
+  }
+  .contentLine{
+    font-size: 15px;
+    height: 40px;
+  }
+}

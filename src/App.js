@@ -21,11 +21,11 @@ function App() {
   useEffect(() => {
     async function getData() {
       const res = await fetchCharacters(page, characterName);
-      const characters = res.results;
-      if (characters) {
-        setError(false);
+      setError(false);
+      try {
+        const characters = res.results;
         setCharacterList(characters);
-      } else {
+      } catch (error) {
         setError(true);
       }
     }
@@ -35,7 +35,6 @@ function App() {
 
   function retrieveCharacterName(name) {
     setPage(null);
-    console.log(name);
     setCharacterName(name);
   }
 
@@ -58,12 +57,12 @@ function App() {
   }
 
   function convertString(gender) {
-    if(gender === "Female") {
-      return 'F';
-    } else if(gender === "Male") {
-      return 'M';
+    if (gender === "Female") {
+      return "F";
+    } else if (gender === "Male") {
+      return "M";
     } else {
-      return '-';
+      return "-";
     }
   }
 
@@ -83,7 +82,8 @@ function App() {
                 onSelect={() => onSelectCharacter(char)}
                 onClick={() => onRemoveCharacter(char)}
               >
-                <p>#{char.id}</p> <p>{char.name}</p> <p>{convertString(char.gender)}</p>
+                <p>#{char.id}</p> <p>{char.name}</p>{" "}
+                <p>{convertString(char.gender)}</p>
               </ListItem>
             );
           })
@@ -103,7 +103,9 @@ function App() {
                 onSelect={() => onSelectCharacter(char)}
                 onClick={() => onAddCharacter(char)}
               >
-                <p>#{char.id}</p> <p style={{fontWeight: 'bold'}}>{char.name}</p> <p>{convertString(char.gender)}</p>
+                <p>#{char.id}</p>{" "}
+                <p style={{ fontWeight: "bold" }}>{char.name}</p>{" "}
+                <p>{convertString(char.gender)}</p>
               </ListItem>
             );
           })

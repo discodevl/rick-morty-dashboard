@@ -17,13 +17,14 @@ function Pagination({ pagehandler }) {
   }
 
   return (
-    <div className={styles.container}>
+    <div>
       <ReactPaginate
         breakLabel="..."
         nextLabel="next &rarr;"
         previousLabel="&larr; previous"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={1}
+        marginPagesDisplayed={1}
+        pageRangeDisplayed={3}
         pageCount={pageCount}
         containerClassName={styles.pagination}
         pageLinkClassName={styles['page-num']}

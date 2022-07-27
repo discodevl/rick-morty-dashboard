@@ -14,8 +14,6 @@ export async function fetchCharacters(page, name) {
   
   if (data.ok) {
     return data.json();
-  } else {
-    console.log('Something went wrong');
   }
 }
 
@@ -24,7 +22,5 @@ export async function fetchEpisode(url) {
   
   if (data.ok) {
     return data.json();
-  } else {
-    console.log('Something went wrong');
   }
 }

@@ -30,29 +30,30 @@ function Modal({ character }) {
         </div>
         <div className={styles.contentWrapper}>
           <div className={styles.contentLine}>
-            <h3>Gender: </h3>
-            <p>{character.gender}</p>
-          </div>
-          <div className={styles.contentLine}>
-            <h3>Species: </h3>
+            <h3>Species:&nbsp;</h3>
             <p>{character.species}</p>
           </div>
           <div className={styles.contentLine}>
-            <h3>Status: </h3>
-            <p>{character.status}</p>
-          </div>
-          <div className={styles.contentLine}>
-            <h3>Origin: </h3>
+            <h3>Origin:&nbsp;</h3>
             <p> {character.origin.name}</p>
           </div>
           <div className={styles.contentLine}>
-            <h3>Location: </h3>
+            <h3>Location:&nbsp;</h3>
             <p>{character.location.name}</p>
           </div>
+          <div className={styles.contentLine}>
+            <h3>Gender:&nbsp;</h3>
+            <p>{character.gender}</p>
+          </div>
+          <div className={styles.contentLine}>
+            <h3>Status:&nbsp;</h3>
+            <p>{character.status}</p>
+          </div>
+          
         </div>
       </div>
       <h3 style={{ textAlign: "center" }}>
-        Episodes containing {character.name}
+        Episodes with {character.name}
       </h3>
       <div className={styles.epList}>
         {episodes.map((ep, i) => {
