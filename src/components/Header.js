@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 
-function NavBar({ filterhandler }) {
+function NavBar({ filterhandler, clearFilters }) {
   function characterHandler(e) {
     filterhandler(e.target.value);
   }
@@ -11,6 +11,7 @@ function NavBar({ filterhandler }) {
         className={styles.img}
         alt="logo-rickandmorty"
         src={require("../assets/rick&morty-logo.png")}
+        onClick={clearFilters}
       />
       <div className={styles.searchContainer}>
         <div className={styles.ico}>
@@ -32,10 +33,12 @@ function NavBar({ filterhandler }) {
         </div>
 
         <input
+          id='input-character'
           className={styles.search}
           type="text"
           placeholder=" search character..."
           onChange={characterHandler}
+
         />
       </div>
     </div>

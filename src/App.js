@@ -66,13 +66,25 @@ function App() {
     }
   }
 
+  async function clearFilters() {
+    const input = document.getElementById('input-character');
+    input.value = '';
+    try{
+      const res = await fetchCharacters();
+      const characters = res.results;
+      setCharacterList(characters);
+    } catch(error){
+      console.log(error.message);
+    }
+  }
+
   return (
     <div className="appContainer">
       {selectedCharacter && <Modal character={selectedCharacter} />}
       {selectedCharacter && (
         <BackDrop onCancel={() => setSelectedCharacter(null)} />
       )}
-      <Header filterhandler={retrieveCharacterName} />
+      <Header filterhandler={retrieveCharacterName} clearFilters={clearFilters}/>
       <CardList title="Favourites">
         {favCharacters.length > 0 ? (
           favCharacters.map((char, i) => {
